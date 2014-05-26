@@ -1,7 +1,27 @@
-import mathplotlib.pyplot as plt
 
-x=[1,2,3,4,5,6,7,8,9,10]
-y=[1,4,9,16,25,36,49,64,81,100]
+import matplotlib.pyplot as plt
+import numpy as np
 
-plt.plot(x,y,label=`nijikannsuu`)
+def f(x,t):
+	return t*x-t**2
+
+def subplots():
+    "Custom subplots with axes throught the origin"
+    fig, ax = plt.subplots()
+
+    # Set the axes through the origin
+    for spine in ['left', 'bottom']:
+        ax.spines[spine].set_position('zero')
+    for spine in ['right', 'top']:
+        ax.spines[spine].set_color('none')
+    
+    ax.grid()
+    return (fig, ax)
+
+
+fig, ax = subplots()  # Call the local version, not plt.subplots()
+x = np.linspace(-2, 10, 200)
+y = np.f(x,t=1)
+ax.plot(x, y, 'r-', linewidth=2, label='sine function', alpha=0.6)
+ax.legend(loc='lower right')
 plt.show()
