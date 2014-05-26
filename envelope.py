@@ -1,4 +1,3 @@
-
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -18,10 +17,16 @@ def subplots():
     ax.grid()
     return (fig, ax)
 
-
 fig, ax = subplots()  # Call the local version, not plt.subplots()
-x = np.linspace(-2, 10, 200)
-y = np.f(x,t=1)
-ax.plot(x, y, 'r-', linewidth=2, label='sine function', alpha=0.6)
-ax.legend(loc='lower right')
+x = np.linspace(-10, 10, 200)
+
+for s in range(10):
+ t = 5-s
+ y = f(x,t) 
+ ax.plot(x,y,'b-',linewidth=1)
+ ax.legend() 
+
+plt.tick_params(labelbottom='off')
+plt.tick_params(labelleft='off')
+plt.ylim(-20,30)
 plt.show()
