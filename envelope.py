@@ -1,41 +1,48 @@
+# -*- coding: utf-8 -*-
 import matplotlib.pyplot as plt
 import numpy as np
 
 def f(x,t):
-    return t*x-t**2 #ŠÖ”‚ğİ’è
+    return t*x-t**2 #é–¢æ•°ã‚’è¨­å®š
 
 def subplots():
     fig, ax = plt.subplots()
 
     for spine in ['left', 'bottom']:
-        ax.spines[spine].set_position('zero') #¶‚Æ‰º‚Ì²‚Í’†‰›‚ÉˆÊ’u‚³‚¹‚é 
-        
-    for spine in ['right', 'top']:
-        ax.spines[spine].set_color('none') #‰E‚Æã‚Ì²‚ÍF‚ğÁ‚·
+        ax.spines[spine].set_position('zero') #å·¦ã¨ä¸‹ã®è»¸ã¯ä¸­å¤®ã«ä½ç½®ã•ã›ã‚‹
 
-    ax.set_xticks([]) #x²‚Ì–Ú·‚è‚ğÁ‚·
-    ax.set_yticks([]) #y²‚Ì–Ú·‚è‚ğÁ‚·
-    
+    for spine in ['right', 'top']:
+        ax.spines[spine].set_color('none') #å³ã¨ä¸Šã®è»¸ã¯è‰²ã‚’æ¶ˆã™
+
+    ax.set_xticks([]) #xè»¸ã®ç›®ç››ã‚Šã‚’æ¶ˆã™
+    ax.set_yticks([]) #yè»¸ã®ç›®ç››ã‚Šã‚’æ¶ˆã™
+
     return (fig, ax)
 
-fig, ax = subplots() 
+fig, ax = subplots()
 
-x = np.linspace(-10, 10, 200) #x‚Ì”ÍˆÍ‚ğŒˆ‚ß‚é
+x = np.linspace(-10, 10, 200) #xã®ç¯„å›²ã‚’æ±ºã‚ã‚‹
 
 
-#envelope0(×‚©‚¢)
-for s in range(-20,20): #t‚Åƒ‹[ƒv‚³‚¹‚é’l‚ğŒˆ‚ß‚é
-    t = s*0.3
-    y = f(x,t) 
-    ax.plot(x,y,'k-',linewidth=1)
+FILEFORMAT = 'png'  # 'png' or 'pdf'
 
-#envelope1(‘e‚¢)
-for s in range(-10,10): #t‚Åƒ‹[ƒv‚³‚¹‚é’l‚ğŒˆ‚ß‚é
-    t = s*0.5
-    y = f(x,t) 
-    ax.plot(x,y,'k-',linewidth=1)
- 
-plt.ylim(-20,30) #y‚Ì•\¦”ÍˆÍ‚ğŒˆ‚ß‚é
+FIGNUM = 0  # 0 (ç´°ã‹ã„) or 1 (ç²—ã„)
 
-plt.savefig() #ƒtƒ@ƒCƒ‹‚Éo—Í
+
+if FIGNUM == 0:  # envelope0(ç´°ã‹ã„)
+    for s in range(-20, 20 + 1): #tã§ãƒ«ãƒ¼ãƒ—ã•ã›ã‚‹å€¤ã‚’æ±ºã‚ã‚‹
+        t = s * 0.3
+        y = f(x, t)
+        ax.plot(x, y, 'k-', linewidth=1)
+
+if FIGNUM == 1:  # envelope1(ç²—ã„)
+    for s in range(-10, 10 + 1): #tã§ãƒ«ãƒ¼ãƒ—ã•ã›ã‚‹å€¤ã‚’æ±ºã‚ã‚‹
+        t = s * 0.5
+        y = f(x, t)
+        ax.plot(x, y, 'k-', linewidth=1)
+
+
+plt.ylim(-20, 30) #yã®è¡¨ç¤ºç¯„å›²ã‚’æ±ºã‚ã‚‹
+
+plt.savefig('envelope' + str(FIGNUM) + '.' + FILEFORMAT)  # ãƒ•ã‚¡ã‚¤ãƒ«ã«å‡ºåŠ›
 plt.show()
