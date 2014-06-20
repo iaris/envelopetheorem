@@ -1,9 +1,9 @@
 envelopetheorem
 ===============
-„‚ÌƒvƒƒOƒ‰ƒ€‚Ìo—ÍŒ‹‰Ê‚Å‚·F
+ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½Ìoï¿½ÍŒï¿½ï¿½Ê‚Å‚ï¿½ï¿½F
 
-<img src="envelope0.png" alt="envelope0" width="120"/>
-<img src="envelope1.png" alt="envelope1" width="120"/>
+<img src="envelope0.png" alt="envelope0" width="400"/>
+<img src="envelope1.png" alt="envelope1" width="400"/>
 
-[”wŒi‚ÆƒR[ƒh‚Ìà–¾]
+[ï¿½wï¿½iï¿½ÆƒRï¿½[ï¿½hï¿½Ìï¿½ï¿½ï¿½]
 (https://docs.google.com/viewer?url=https://github.com/iaris/envelopetheorem/blob/master/envelope-report.pdf?raw=true)
